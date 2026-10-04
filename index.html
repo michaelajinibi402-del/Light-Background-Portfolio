@@ -24,23 +24,27 @@
     <!-- HEADER SECTION -->
 
     <header>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="#"><img src="images/MECX LOGO2.png" width="90rem" alt="web logo"></a>
 
-            <div>
-                <ul class="nav-links" id="nav-links">
+            <div class="nav-menu" id="navMenu">
+                <button class="close-btn" id="navClose" type="button" aria-label="Close navigation">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+                <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#project">Projects</a></li>
-                    <li><a href="#">Skills</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
-                    <a href="#" class="close-btn"><i class="bi bi-x-lg" id="closeBtn"></i></a>
                 </ul>
-            </div>
-            <div>
                 <a href="#" class="btn">Hire me?</a>
             </div>
-            <a href="#" class="toggler" id="toggler"><i class="bi bi-list" id="menuBtn"></i></a>
+
+            <button class="toggler" id="navToggle" type="button" aria-label="Open navigation"
+                aria-controls="navMenu" aria-expanded="false">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
         </nav>
     </header>
 
@@ -321,16 +325,41 @@
 
     <!-- ///////SCRIPT LINK////////// -->
     <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const closeBtn = document.getElementById("closeBtn");
-        const navLinks = document.getElementById("navLinks");
+        const navToggle = document.getElementById("navToggle");
+        const navClose = document.getElementById("navClose");
+        const navMenu = document.getElementById("navMenu");
+        const mobileNav = window.matchMedia("(max-width: 768px)");
 
-        menuBtn.addEeventListener("click", function () {
-            navLinks.classList.add("active");
+        function setMenuOpen(isOpen) {
+            navMenu.classList.toggle("active", isOpen);
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+            document.body.classList.toggle("menu-open", isOpen);
+        }
+
+        navToggle.addEventListener("click", function () {
+            setMenuOpen(true);
         });
 
-        closeBtn.addEventListener("click", function () {
-            navLinks.remove("active");
+        navClose.addEventListener("click", function () {
+            setMenuOpen(false);
+        });
+
+        navMenu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                setMenuOpen(false);
+            });
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                setMenuOpen(false);
+            }
+        });
+
+        mobileNav.addEventListener("change", function (event) {
+            if (!event.matches) {
+                setMenuOpen(false);
+            }
         });
     </script>
 </body>
