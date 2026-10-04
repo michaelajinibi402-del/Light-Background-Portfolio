@@ -31,6 +31,28 @@ nav {
     background-color: var(--bg-color);
 }
 
+.toggler {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #555454;
+    display: none;
+}
+
+.toggler:hover {
+    color: #000000;
+}
+
+.close-btn {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #636161;
+    display: none;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -200,7 +222,7 @@ nav ul li a:hover {
     font-size: 3.2rem;
     font-family: "Roboto Serif", serif;
     margin-bottom: 20px;
-    line-height: 0.7;
+    line-height: 1;
 
 }
 
@@ -276,7 +298,7 @@ nav ul li a:hover {
     color: var(--bg-color);
     min-height: 100vh;
     padding: 10% 15%;
-    
+
 
 }
 
@@ -310,14 +332,14 @@ nav ul li a:hover {
 
 /* /////PROJECT GRID///////////// */
 
-.project-grid{
+.project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     animation: 1s fadein ease;
 }
 
-.project-card{
+.project-card {
     padding: 2rem 4rem;
     background-color: #111;
     border-radius: 10px;
@@ -325,13 +347,13 @@ nav ul li a:hover {
     transition: 0.3s ease;
 }
 
-.project-card:hover{
+.project-card:hover {
     background-color: #191a1b;
-    transform: scale(1.1);
+    transform: scale(1.05);
     border: 2px solid #37383a;
 }
 
-.span-number{
+.span-number {
     font-size: 0.7rem;
     color: var(--button-color);
     background-color: #000000;
@@ -339,15 +361,15 @@ nav ul li a:hover {
     border-radius: 20px;
     border: 1px solid var(--button-color);
     font-weight: bold;
-    
+
 }
 
-.project-card h3{
+.project-card h3 {
     font-family: sans-serif;
     margin: 17px 0;
 }
 
-.project-card p{
+.project-card p {
     font-family: sans-serif;
     color: var(--secondary-color);
     font-size: 0.8rem;
@@ -355,15 +377,257 @@ nav ul li a:hover {
     line-height: 1.4;
 }
 
-.card-language span{
+.card-language span {
     padding: 4px 7px;
     background-color: #1f1f1f;
-    border: 1px solid #2e2d2d ;
+    border: 1px solid #2e2d2d;
     border-radius: 10px;
     color: var(--secondary-color)
 }
 
-.project-grid a{
+.project-grid a {
     text-decoration: none;
     color: var(--bg-color);
 }
+
+
+/* ///////SKILL SECTION////////// */
+
+.skills {
+    min-height: 100vh;
+    background-color: #191a1b;
+    color: var(--bg-color);
+    padding: 10% 15%;
+}
+
+.skills-small {
+    font-family: sans-serif;
+    color: var(--button-color);
+    font-size: 0.9rem;
+}
+
+.skills-first {
+    border-bottom: 1px solid #464749;
+}
+
+.skills-first h2 {
+    font-size: 4rem;
+    font-family: "Roboto Serif", serif;
+    margin: 20px 0px;
+    line-height: 1.3;
+}
+
+.skills-first span {
+    color: var(--secondary-color);
+}
+
+.other-p {
+    font-family: sans-serif;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin-bottom: 20px
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.skill-box h2 {
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: var(--button-color);
+    margin-bottom: 20px;
+}
+
+.skill-info span {
+    font-family: sans-serif;
+    line-height: 3;
+    font-size: 0.9rem;
+}
+
+.percentage{
+    font-weight: bold;
+}
+
+.skill-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-info span:last-child{
+    color: var(--button-color);
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background: var(--button-color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+
+
+
+/* ////////////////MEDIA ///////////////// */
+
+/* small phone */
+
+@media (max-width: 460px) {
+
+    nav {
+        padding: 10px;
+    }
+
+
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--bg-color);
+    }
+
+    .toggler {
+        display: block;
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .nav-link.active {
+        display: flex;
+    }
+
+    .nav-link li a {
+        display: none;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    /* //////HERO SECTION////// */
+
+    .hero {
+        display: flex;
+        justify-content: center;
+
+        align-items: center;
+        text-align: center;
+        background: url(images/BG.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-height: 92vh;
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ///ABOUT SECTION///// */
+
+    .about {
+        padding: 20px 50px;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
+
+    .container1 {
+        border-right: none;
+        padding: 2px;
+    }
+
+    .container1 h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+
+    }
+
+    .contaoner2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        margin: 10px;
+    }
+
+
+    .about-section2 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        gap: 1.5rem;
+        padding-bottom: 70px;
+
+    }
+
+    .about-section2 p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .project {
+        padding: 20px 50px;
+
+    }
+
+    .p-small {
+        margin-top: 50px;
+    }
+
+    .project-firstcard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-firstcard p {
+        display: none;
+    }
+
+    .project-grid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .card-language span {
+        line-height: 2.5;
+    }
+
+}
+
+
+
+
+/* big phone/phones */

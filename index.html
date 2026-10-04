@@ -28,17 +28,19 @@
             <a href="#"><img src="images/MECX LOGO2.png" width="90rem" alt="web logo"></a>
 
             <div>
-                <ul>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#project">Projects</a></li>
                     <li><a href="#">Skills</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
+                    <a href="#" class="close-btn"><i class="bi bi-x-lg" id="closeBtn"></i></a>
                 </ul>
             </div>
             <div>
                 <a href="#" class="btn">Hire me?</a>
             </div>
+            <a href="#" class="toggler" id="toggler"><i class="bi bi-list" id="menuBtn"></i></a>
         </nav>
     </header>
 
@@ -65,8 +67,8 @@
         <div class="about-container">
             <div class="container1">
                 <p>ABOUT</p>
-                <H2>With passion,</H2>
-                <H2>with Precision</H2>
+                <h2>With passion, with Precision.</h2>
+
                 <p class="first-p">As a full-stacl developer, i believe the best software is born where technical
                     excellence
                     meets aesthetic sensibility.
@@ -113,7 +115,7 @@
                 <span>◉</span>
                 <h3>Details</h3>
                 <p>We combine creativity and programming to build website that are functional, responsive, and easy to
-                    use..</p>
+                    use.</p>
             </div>
 
         </div>
@@ -196,9 +198,141 @@
         </div>
     </section>
 
+    <!-- /////////////SKILL SECTION///////// -->
+
+    <section class="skills" id="skills">
+        <div class="skills-first">
+            <p class="skills-small">SKILLS</p>
+            <h2>My technology <br><span>toolkit.</span></h2>
+            <p class="other-p">I primarily work in the modern web ecosystem, but I am <br>
+                always ready to pick up new technologies.</p>
+        </div>
+        <!-- FRONTEND  -->
+        <div class="skill-container">
+            <div class="skill-box frontend">
+                <h2>FRONTEND</h2>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>React / Next.js</span>
+                        <span class="percentage">95%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>TypeScript</span>
+                        <span class="percentage">90%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Tailwind CSS</span>
+                        <span class="percentage">92%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 92%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Framer Motion</span>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BACKEND -->
+
+            <div class="skill-box backend">
+                <h2>BACKEND</h2>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Node.js / Express</span>
+                        <span class="percentage">88%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 88%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>PostgreSQL</span>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Superbase</span>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- TOOLS & OTHERS -->
+
+            <div class="skill-box tools & others">
+
+                <h2>TOOLS & OTHERS</h2>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>AWS / Vercel</span>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>GIT / GitHub</span>
+                        <span class="percentage">95%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="progrss" style="width: 95%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
 
 
 
+
+
+    <!-- ///////SCRIPT LINK////////// -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const closeBtn = document.getElementById("closeBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEeventListener("click", function () {
+            navLinks.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", function () {
+            navLinks.remove("active");
+        });
+    </script>
 </body>
 
 </html>
