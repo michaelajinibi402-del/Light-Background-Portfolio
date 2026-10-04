@@ -625,6 +625,26 @@ nav ul li a:hover {
         line-height: 2.5;
     }
 
+    /* ///////SKILL SECTION///// */
+
+    .skills{
+        padding: 70px 50px;
+    }
+
+    .skills-first h2 {
+    font-size: 2.5rem;
+    }
+
+    .skills-first{
+        font-size: 0.8rem;
+    }
+
+    .skill-container{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
 }
 
 
