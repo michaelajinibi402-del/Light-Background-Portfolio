@@ -73,6 +73,10 @@ nav {
     list-style: none;
 }
 
+.nav-links img{
+    display: none;
+}
+
 .nav-links a {
     text-decoration: none;
     color: black;
@@ -418,6 +422,7 @@ nav {
 
 .skills-first {
     border-bottom: 1px solid #464749;
+    animation: 1s fadein ease;
 }
 
 .skills-first h2 {
@@ -443,6 +448,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 50px;
     gap: 40px;
+    animation: 1s fadein ease;
 }
 
 .skill-box h2 {
@@ -458,16 +464,17 @@ nav {
     font-size: 0.9rem;
 }
 
-.percentage{
+.percentage {
     font-weight: bold;
+
 }
 
-.skill-info{
+.skill-info {
     display: flex;
     justify-content: space-between;
 }
 
-.skill-info span:last-child{
+.skill-info span:last-child {
     color: var(--button-color);
 }
 
@@ -484,71 +491,125 @@ nav {
     border-radius: 20px;
 }
 
+.skills-btn {
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    gap: 10px;
+    animation: 1s fadein ease;
+}
+
+.skills-btn button {
+    padding: 10px 20px;
+    background-color: #222121;
+    border-radius: 20px;
+    border: 1px solid #5f5e5e;
+    color: #868484;
+}
+
+/* //////SERVICE SECTION */
+
+.service {
+    min-height: 100vh;
+    background: url(images/BG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10% 15%;
+}
+
+.service-heading p {
+    font-family: sans-serif;
+    color: var(--button-color);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    animation: 1s fadein ease;
+}
+
+.service-heading h2 {
+    font-size: 3.2rem;
+    font-family: "Roboto Serif", serif;
+    margin-bottom: 20px;
+    line-height: 0.9;
+    animation: 1s fadein ease;
+}
+
+.service-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    animation: 1s fadein ease;
+}
+
+.services-card {
+    padding: 2rem 4rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid var(--button-color);
+    transition: 0.3s ease;
+    margin: 20px;
+
+}
+
+.services-card:hover {
+    transform: scale(1.05);
+}
+
+.service-heading h2::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    background: #d8d8d8;
+    margin: 10px;
+}
+
+.icon {
+    background-color: #242323;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--button-color);
+}
+
+.services-card h3 {
+    color: var(--button-color);
+    font-family: sans-serif;
+    margin: 20px 0;
+}
+
+.services-card p {
+    font-family: sans-serif;
+    color: #585757;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+.services-card a {
+    background-color: var(--button-color);
+    text-decoration: none;
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
+
+.services-card a:hover {
+    background-color: #bd5f07;
+}
 
 
 
 
 /* ////////////////MEDIA ///////////////// */
 
-@media (max-width: 768px) {
-    nav {
-        padding: 0.75rem 1rem;
-    }
-
-    .nav-menu {
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2.5rem;
-        background: var(--bg-color);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateX(100%);
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: translateX(0);
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .nav-links a {
-        font-size: 1.1rem;
-    }
-
-    .toggler {
-        display: block;
-    }
-
-    .close-btn {
-        display: block;
-        position: absolute;
-        top: 1.25rem;
-        right: 1.25rem;
-        padding: 0.5rem;
-        cursor: pointer;
-    }
-
-    .menu-open {
-        overflow: hidden;
-    }
-}
-
 /* small phone */
 
 @media (max-width: 460px) {
+
+
     /* //////HERO SECTION////// */
 
     .hero {
@@ -591,6 +652,7 @@ nav {
         border-right: none;
         padding: 2px;
     }
+
 
     .container1 h2 {
         font-size: 2.5rem;
@@ -650,22 +712,38 @@ nav {
 
     /* ///////SKILL SECTION///// */
 
-    .skills{
+    .skills {
         padding: 70px 50px;
     }
 
     .skills-first h2 {
-    font-size: 2.5rem;
+        font-size: 2.5rem;
     }
 
-    .skills-first{
+    .skills-first {
         font-size: 0.8rem;
     }
 
-    .skill-container{
+    .skill-container {
         display: flex;
         flex-direction: column;
         gap: 60px;
+    }
+
+    .skills-btn {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ////SERVICE SECTION//// */
+
+    .service {
+        padding: 80px 50px;
+    }
+
+    .service-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }
@@ -674,3 +752,100 @@ nav {
 
 
 /* big phone/phones */
+
+@media (max-width: 768px) {
+    nav {
+        margin: 0;
+        padding: 15px;
+        box-sizing: border-box;
+
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 30rem;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+        background: var(--bg-color);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 10px;
+    }
+    
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 30px;
+        
+        
+
+
+    }
+
+    .nav-links li img{
+        display: block;
+        margin-bottom: 60px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        display: flex;
+    }
+
+
+
+    .toggler {
+        display: block;
+        
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .menu-open {
+        overflow: hidden;
+    }
+
+    .btn {
+        width: 380px;
+        height: 30px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1rempx;
+        font-weight: 600;
+        border-radius: 50px;
+
+    }
+}
